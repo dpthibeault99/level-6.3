@@ -76,6 +76,7 @@ function animate()
 	player.drawTriangle();
 	turret.drawTriangle();
 	bullet.drawCircle();
+	point(); // from classwork
 }
 
 function angularMovement()
@@ -128,3 +129,13 @@ function angularMovement()
 	player.move();
 }
 
+function point() // in game compass?
+{
+	// from classwork
+    var dx = player.x - turret.x;
+    var dy = player.y - turret.y;
+
+    var radians = Math.atan2(dy,dx);
+	turret.angle = radians * 180/Math.PI;
+
+}
